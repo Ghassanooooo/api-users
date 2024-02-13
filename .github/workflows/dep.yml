@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build the Docker image
-        run: docker build -t ghassanaldarwish/app-api-users .
+        run: docker build -t ghassanaldarwish/api-users .
 
       - name: Login Docker Hub
         run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
@@ -21,4 +21,4 @@ jobs:
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Push to Docker Hub
-        run: docker push ghassanaldarwish/app-api-users
+        run: docker push ghassanaldarwish/api-users
